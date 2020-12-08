@@ -4,8 +4,22 @@ import useSelect from '../../hooks/useSelect/useSelect';
 
 const Formulario = () => {
 
+    // https://newsapi.org/
+    // get http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-08&sortBy=publishedAt&apiKey=API_KEY
+    // api key: 214b596a5c574a11988e22a3c4f24c18
+
+    const OPCIONES = [
+        { value: 'general', label: 'General'},
+        { value: 'business', label: 'Negocios'},
+        { value: 'entertainment', label: 'Entretenimiento'},
+        { value: 'health', label: 'Salud'},
+        { value: 'science', label: 'Ciencia'},
+        { value: 'sports', label: 'Deportes'},
+        { value: 'technology', label: 'Tecnología'},
+    ]
+
     // custom hook
-    const [categoria, SelectNoticias] = useSelect()
+    const [categoria, SelectNoticias] = useSelect('general', OPCIONES)
 
     return (
         <div className={`${styles.buscador} row`}>
