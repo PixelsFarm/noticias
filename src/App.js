@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 import Header from './components/Header/Header'
 import Formulario from './components/Formulario/Formulario'
+import Noticias from './components/Noticia/Noticia'
+import ListadoNoticias from './components/ListadoNoticias/ListadoNoticias'
 
 
 function App() {
@@ -33,9 +35,14 @@ function App() {
       />
 
       <div className="container white">
-      <Formulario
-        guardarCategoria={guardarCategoria}
-      />
+        <Formulario
+          guardarCategoria={guardarCategoria}
+        />
+
+        <ListadoNoticias 
+          noticias={noticias}
+        />
+
       </div>
     </Fragment>
   );
