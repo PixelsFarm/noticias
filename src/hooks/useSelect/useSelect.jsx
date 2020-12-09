@@ -13,7 +13,7 @@ const useSelect = (stateInicial, opciones) => {
         >
             {
                 opciones.map(opcion => (
-                    <option key={opcion} value={opcion.value}>{opcion.label}</option>
+                    <option key={opcion.value} value={opcion.value}>{opcion.label}</option>
                 ))
             }
         </select>

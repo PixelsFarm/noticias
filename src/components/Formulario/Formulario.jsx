@@ -1,12 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './Formulario.module.css';
 import useSelect from '../../hooks/useSelect/useSelect';
 
 const Formulario = ({ guardarCategoria }) => {
-
-    // https://newsapi.org/
-    // get http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-08&sortBy=publishedAt&apiKey=API_KEY
-    // api key: 214b596a5c574a11988e22a3c4f24c18
 
     const OPCIONES = [
         { value: 'general', label: 'General'},
