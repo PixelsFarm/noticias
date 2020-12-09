@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Formulario.module.css';
 import useSelect from '../../hooks/useSelect/useSelect';
 
-const Formulario = () => {
+const Formulario = ({ guardarCategoria }) => {
 
     // https://newsapi.org/
     // get http://newsapi.org/v2/everything?q=bitcoin&from=2020-11-08&sortBy=publishedAt&apiKey=API_KEY
@@ -21,10 +21,18 @@ const Formulario = () => {
     // custom hook
     const [categoria, SelectNoticias] = useSelect('general', OPCIONES)
 
+    const buscarNoticias = e => {
+        e.preventDefault()
+
+        guardarCategoria(categoria)
+    }
+
     return (
         <div className={`${styles.buscador} row`}>
             <div className="col s12 m8 offset-m2">
-                <form>
+                <form
+                    onSubmit={buscarNoticias}
+                >
                     <h2 className={styles.heading}>Encuentra noticias por categoria</h2>
                     <div className="input-field col s12">
                         <SelectNoticias />
